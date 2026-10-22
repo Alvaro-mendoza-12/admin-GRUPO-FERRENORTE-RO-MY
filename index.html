@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración - GRUPO FERRENORTE</title>
     <link rel="stylesheet" href="admin-styles.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
 </head>
 
 <body>
@@ -50,7 +51,7 @@
     <!-- Admin Dashboard -->
     <div id="adminDashboard" class="admin-dashboard" style="display: none;">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside id="adminSidebar" class="sidebar">
             <div class="sidebar-header">
                 <img src="img/logo.jpeg" alt="Logo" class="sidebar-logo">
                 <h2>GRUPO FERRENORTE</h2>
@@ -71,11 +72,16 @@
                 </a>
             </nav>
         </aside>
+        <div id="adminSidebarBackdrop" class="admin-sidebar-backdrop" aria-hidden="true"></div>
 
         <!-- Main Content -->
         <main class="main-content">
             <!-- Header -->
             <header class="content-header">
+                <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Abrir menú lateral"
+                    aria-expanded="false" aria-controls="adminSidebar">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
                 <h1 id="sectionTitle">Productos</h1>
                 <button id="addNewBtn" class="btn btn-primary">
                     <i class="fas fa-plus"></i>
@@ -287,7 +293,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0"></script>
     <script src="supabase-config.js"></script>
     <script src="admin-script.js"></script>
 </body>
